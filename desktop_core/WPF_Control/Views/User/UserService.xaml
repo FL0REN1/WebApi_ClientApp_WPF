@@ -1,0 +1,64 @@
+﻿<Window x:Class="WPF_Control.Views.UserService"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MVVM="clr-namespace:WPF_Control.Navigation" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="UserService" Height="450" Width="1100" ResizeMode="NoResize">
+    <Window.DataContext>
+        <MVVM:MVVM_Navigation/>
+    </Window.DataContext>
+    <Grid Background="#F5F5F5">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Loaded">
+                <i:InvokeCommandAction Command="{Binding CommandLoad_userService}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="197*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid IsSynchronizedWithCurrentItem="True"
+              SelectionMode="Single"
+              AutoGenerateColumns="False"
+              IsReadOnly="False"
+              ItemsSource="{Binding users}" SelectedItem="{Binding SelectedUser}" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding username}" Width="*" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding age}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="IsOnline" Binding="{Binding isOnline}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Login" Binding="{Binding login}" Width="*" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding password}" Width="*" IsReadOnly="False"/>
+                <DataGridTextColumn Header="IsAdmin" Binding="{Binding isAdmin}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Column="1" Margin="20,93,20,0" VerticalAlignment="Top" BorderThickness="0" Background="White" CornerRadius="10" Grid.Row="1">
+            <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center" Background="White" >
+                <TextBlock Text="User Service" Padding="85,0,0,0" Margin="0 0 0 20" FontWeight="Bold" FontSize="18" />
+
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <Button Content="Add" Margin="0 10 0 0" Width="100" Background="#FF97CC8F" BorderBrush="{x:Null}" Command="{Binding UserAddServiceNav}"/>
+                    <Button Content="Change"  Margin="0 10 0 0" Width="100" Background="#FF97CC8F" BorderBrush="{x:Null}" Command="{Binding CommandChange_userService}"/>
+                    <Button Content="Delete" Margin="0 10 0 0" Width="100" Background="#FF97CC8F" BorderBrush="{x:Null}" Command="{Binding CommandDelete_userService}"/>
+                </StackPanel>
+
+                <Button Content="Clear all" Background="#FFCE3324" BorderBrush="{x:Null}" Command="{Binding CommandClearAll_userService}"/>
+            </StackPanel>
+        </Border>
+
+        <Button HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,5,0" Foreground="{x:Null}" Command="{Binding MainNav}" BorderBrush="{x:Null}" >
+            <Button.Background>
+                <ImageBrush ImageSource="pack://application:,,,/WPF_Control;component/Resources/Cross.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

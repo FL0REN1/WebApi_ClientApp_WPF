@@ -1,0 +1,43 @@
+﻿<Window x:Class="WPF_Control.Views.User.Components.UserAddService"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MVVM="clr-namespace:WPF_Control.Add" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="USER_ADD" Height="250" Width="400" ResizeMode="NoResize">
+    <Window.DataContext>
+        <MVVM:MVVM_Add/>
+    </Window.DataContext>
+    <Grid>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Loaded">
+                <i:InvokeCommandAction Command="{Binding CommandLoad_userService}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Username:" />
+        <TextBlock Grid.Row="0" Margin="5" Foreground="Red" Text="{Binding Path=(Validation.Errors)[0].ErrorContent, ElementName=usernameTextBox}" />
+        <TextBox Grid.Row="0" Margin="5" Width="200" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+        <Label Grid.Row="1" Content="Age:" />
+        <TextBlock Grid.Row="1" Margin="5" Foreground="Red" Text="{Binding Path=(Validation.Errors)[0].ErrorContent, ElementName=ageTextBox}" />
+        <TextBox Grid.Row="1" Margin="5" Width="200" Text="{Binding Age, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+        <Label Grid.Row="3" Content="Login:" />
+        <TextBlock Grid.Row="3" Margin="5" Foreground="Red" Text="{Binding Path=(Validation.Errors)[0].ErrorContent, ElementName=loginTextBox}" />
+        <TextBox Grid.Row="3" Margin="5" Width="200" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+        <Label Grid.Row="4" Content="Password:" />
+        <TextBlock Grid.Row="4" Margin="5" Foreground="Red" Text="{Binding Path=(Validation.Errors)[0].ErrorContent, ElementName=passwordBox}" />
+        <TextBox Grid.Row="4"  Margin="5" Width="200" VerticalContentAlignment="Center" FontSize="14" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Foreground="White"/>
+        <CheckBox Grid.Row="5" Margin="5" Content="Is Admin" IsChecked="{Binding IsAdmin}" />
+        <Button Grid.Row="6" Margin="5" Width="100" Height="30" Content="Submit" Command="{Binding CommandSubmit_userService}"/>
+    </Grid>
+</Window>

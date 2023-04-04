@@ -1,0 +1,2 @@
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\obj\Release\RabbitMQ_library.csproj.AssemblyReference.cache
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\obj\Release\RabbitMQ_library.csproj.CoreCompileInputs.cache

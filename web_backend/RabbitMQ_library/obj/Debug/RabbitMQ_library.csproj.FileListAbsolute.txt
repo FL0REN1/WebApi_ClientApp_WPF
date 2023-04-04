@@ -1,0 +1,15 @@
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\RabbitMQ_library.dll.config
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\RabbitMQ_library.dll
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\RabbitMQ_library.pdb
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\System.Buffers.dll
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\System.Numerics.Vectors.dll
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\RabbitMQ.Client.xml
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\System.Memory.xml
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\bin\Debug\System.Threading.Channels.xml
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\obj\Debug\RabbitMQ_library.csproj.AssemblyReference.cache
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\obj\Debug\RabbitMQ_library.csproj.CoreCompileInputs.cache
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\obj\Debug\RabbitMQ_library.csproj.CopyComplete
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\obj\Debug\RabbitMQ_library.dll
+D:\WebAPI_clientApp_WPF\web_backend\RabbitMQ_library\obj\Debug\RabbitMQ_library.pdb

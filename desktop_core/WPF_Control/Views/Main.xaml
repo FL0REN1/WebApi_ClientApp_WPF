@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPF_Control.Main"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MVVM="clr-namespace:WPF_Control.Navigation"
+        mc:Ignorable="d"
+        Title="MAIN" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.DataContext>
+        <MVVM:MVVM_Navigation/>
+    </Window.DataContext>
+    <Window.Resources>
+        <FontFamily x:Key="SansSerifCollection">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
+        <SolidColorBrush x:Key="HeaderBackground" Color="#212121"/>
+        <SolidColorBrush x:Key="NavigationButtonBackground" Color="#FFE4E4E4"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="228"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- Header -->
+        <Border Grid.ColumnSpan="2" CornerRadius="0,0,20,20" Background="{StaticResource HeaderBackground}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20">
+                <TextBlock Foreground="White" FontSize="28" FontFamily="{StaticResource SansSerifCollection}" FontWeight="Bold">Welcome to service app!</TextBlock>
+                <Separator Margin="10,0" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                <Button Content="GitHub" Margin="20,0" Padding="10,0" Background="#24292e" Foreground="White" BorderThickness="0" FontWeight="Bold" FontSize="18" Command="{Binding GitHub}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Navigation Links -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#F5F5F5" VerticalAlignment="Center" Margin="20,0,20,0" Height="320">
+            <TextBlock Text="Navigation" Padding="30,5,0,5" FontSize="25" Margin="0,0,0,30" Background="#FFC1C1C1" FontWeight="Bold"/>
+            <Button Content="Check user" Margin="0,0,0,30" Background="#FFC1C1C1" BorderBrush="{x:Null}" Command="{Binding UserServiceNav}" />
+            <Button Content="Check chat" Margin="0,0,0,10" Background="#FFC1C1C1" BorderBrush="{x:Null}" Command="{Binding ChatServiceNav}"/>
+            <Border BorderBrush="#2B2D42" BorderThickness="2" CornerRadius="100" Width="140" Height="140" Background="#FFFDF6F0">
+                <TextBlock Text="{Binding CurrentTime, StringFormat='{}{0:HH:mm:ss}'}" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </StackPanel>
+        <Image gif:ImageBehavior.AnimatedSource="pack://application:,,,/WPF_Control;component/resources/programmer_gif.gif"
+       Grid.Column="1"
+       Margin="0,77,0,0"
+       Stretch="UniformToFill" Grid.RowSpan="2"/>
+    </Grid>
+</Window>
